@@ -11,3 +11,4 @@ before_script:
   - npm prune
 script:
   - commitlint-travis
+  - npm run lint
