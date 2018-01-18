@@ -164,4 +164,10 @@ code-char-height = 60px;
   border-radius: 3px;
   font-size: 17px;
 }
+
+.answer {
+  img {
+    width: 100%;
+  }
+}
 </style>
