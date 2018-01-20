@@ -45,14 +45,14 @@ export default {
   created() {
     // this.puzzleCfg = JSON.parse(this.$route.query.puzzle);
     this.puzzleCfg = {
-      description: '这里是问题',
+      description: '收到一条神秘信息',
       submitBtnText: '提交',
       inputPlaceholder: 'CODE',
-      code: '1234',
-      codeBgColors: ['red', 'green', 'yellow', 'blue'],
+      code: '7781',
+      codeBgColors: ['#574A43', '#C1CCA6', '#EDC4AD', '#BEC9C5'],
       errorMsg: '密码错误',
       answerImg:
-        'http://ww2.sinaimg.cn/large/a15b4afegy1fnfedxnog9j208w05hgm4.jpg',
+        'http://ww1.sinaimg.cn/large/006z6wKXly1fnmzxwvfyzj30bj0a23ya.jpg',
     };
     this.inputChars = this.puzzleCfg.inputPlaceholder.split('');
     this.inputChars.length = this.puzzleCfg.code.length;
@@ -63,7 +63,8 @@ export default {
   watch: {
     inputStr(rawStr) {
       this.isCorretCode = undefined;
-      const str = rawStr.trim();
+      const str = rawStr.replace(/[^0-9]/g, '');
+      this.inputStr = str;
       const len = this.puzzleCfg.code.length;
       for (let i = 0; i < len; i += 1) {
         this.inputChars[i] = str[i];
@@ -85,7 +86,7 @@ code-char-height = 60px;
 }
 
 .description {
-  font-size: 20px;
+  font-size: 25px;
   margin: 0;
 }
 
@@ -118,7 +119,7 @@ code-char-height = 60px;
     flex-grow: 1;
     margin: 4px;
     border: 1px solid #fff;
-    border-radius: 3px;
+    border-radius: 4px;
     height: code-char-height;
     position: relative;
 
@@ -131,6 +132,7 @@ code-char-height = 60px;
     }
 
     span {
+      color: white;
       font-size: 30px;
       position: absolute;
       height: code-char-height;
@@ -149,6 +151,7 @@ code-char-height = 60px;
   text-align: left;
   position: relative;
   height: 20px;
+  color: red;
 
   span {
     position: absolute;
@@ -156,13 +159,14 @@ code-char-height = 60px;
 }
 
 .submitBtn {
-  padding: 10px;
+  padding: 13px;
   color: white;
   width: 100%;
   margin-top: 15px;
-  background: red;
-  border-radius: 3px;
-  font-size: 17px;
+  background: #1AAD19;
+  font-size: 19px;
+  border: none;
+  border-radius: 5px;
 }
 
 .answer {

@@ -12,8 +12,8 @@ export default {
 
 <style lang="stylus" scoped>
 #app {
-  background #000;
-  color: #fff;
+  background #FFF;
+  color: #000;
   height: 100%;
   font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
